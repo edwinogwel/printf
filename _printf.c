@@ -2,9 +2,9 @@
 
 /**
  * printIdentifiers - prints special characters
- * @next: char after the % (modulus)
- * @arg: arg for the indentifier
- * Return: the num of chars printed
+ * @next: character after the %
+ * @arg: argument for the indentifier
+ * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  */
 int printIdentifiers(char next, va_list arg)
@@ -16,7 +16,12 @@ int printIdentifiers(char next, va_list arg)
 		{"s", print_str},
 		{"d", print_int},
 		{"i", print_int},
+		{"u", print_unsigned},
 		{"b", print_unsignedToBinary},
+		{"o", print_oct},
+		{"x", print_hex},
+		{"X", print_HEX},
+		{NULL, NULL}
 	};
 
 	for (functsIndex = 0; functs[functsIndex].indentifier != NULL; functsIndex++)
@@ -32,10 +37,12 @@ int printIdentifiers(char next, va_list arg)
  * Description: produces output according to a format
  * write output to stdout, the standard output stream
  * @format: character string composed of zero or more directives
+ *
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  * return -1 for incomplete identifier error
  */
+
 int _printf(const char *format, ...)
 {
 	unsigned int i;
