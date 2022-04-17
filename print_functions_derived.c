@@ -11,6 +11,7 @@ int print_unsignedToBinary(va_list arg)
 	unsigned int printed;
 
 	print_binary(n, &printed);
+	print_binary(n, &printed);
 
 	return (printed);
 }
