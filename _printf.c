@@ -16,6 +16,7 @@ int printIdentifiers(char next, va_list arg)
 		{"s", print_str},
 		{"d", print_int},
 		{"i", print_int},
+		{"b", print_unsignedToBinary},
 	};
 
 	for (functsIndex = 0; functs[functsIndex].indentifier != NULL; functsIndex++)
